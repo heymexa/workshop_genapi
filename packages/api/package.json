@@ -1,0 +1,36 @@
+{
+  "name": "@project/api",
+  "version": "1.0.0",
+  "main": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "devDependencies": {
+    "orval": "^6.30.2",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run generate && tsup",
+    "dev": "npm run clean && npm run generate && tsup --ignore-watch schema.json",
+    "generate": "orval",
+    "clean": "rimraf dist && rimraf src/gen",
+    "lint": "eslint ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "perttier ./src --check",
+    "prettier:fix": "npm run prettier -- --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tanstack/react-query": "^5.45.1",
+    "axios": "^1.7.2",
+    "tsup": "^8.1.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "workshop-genapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start -w next",
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "turbo": "^2.0.4"
+  },
+  "packageManager": "npm@10.5.2",
+  "workspaces": [
+    "next",
+    "packages/*"
+  ]
+}

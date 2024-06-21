@@ -1,0 +1,50 @@
+openapi: "3.0.0"
+info:
+  title: Generation API
+  version: 1.0.0
+paths:
+  '/api/v1/test':
+    get:
+      operationId: test_api_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestApiGet'
+          description: ''
+    post:
+      operationId: test_api_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestApiCreate'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestApiCreateResponse'
+components:
+  schemas:
+    TestApiGet:
+      type: object
+      properties:
+        status:
+          type: string
+        isOk:
+          type: boolean
+    TestApiCreate:
+      type: object
+      properties:
+        param:
+          type: string
+    TestApiCreateResponse:
+      type: object
+      properties:
+        result:
+          type: string
+        status:
+          type: string
